@@ -71,6 +71,7 @@ namespace IdentityServer.Data
                         Updated = null,
                         NonEditable = false
                     },
+
                     new IdentityResource()
                     {
                         Id = 2,
@@ -153,6 +154,7 @@ namespace IdentityServer.Data
                         AllowAccessTokensViaBrowser = false,
                         AllowOfflineAccess = false
                     },
+
                     new Client
                     {
                         Id = 3,
@@ -299,13 +301,13 @@ namespace IdentityServer.Data
                 new ClientPostLogoutRedirectUri
                 {
                     Id = 1,
-                    PostLogoutRedirectUri = "http://localhost:5002/signout-callback-oidc",
+                    PostLogoutRedirectUri = "http://localhost:44343/signout-callback-oidc",
                     ClientId = 3
                 },
                 new ClientPostLogoutRedirectUri
                 {
                     Id = 2,
-                    PostLogoutRedirectUri = "http://localhost:5003/index.html",
+                    PostLogoutRedirectUri = "http://localhost:44343/index.html",
                     ClientId = 4
                 });
 
@@ -314,13 +316,13 @@ namespace IdentityServer.Data
                 new ClientRedirectUri
                 {
                     Id = 1,
-                    RedirectUri = "http://localhost:5002/signin-oidc",
+                    RedirectUri = "http://localhost:44343/signin-oidc",
                     ClientId = 3
                 },
                 new ClientRedirectUri
                 {
                     Id = 2,
-                    RedirectUri = "http://localhost:5003/callback.html",
+                    RedirectUri = "http://localhost:44343/callback.html",
                     ClientId = 4
                 });
 
