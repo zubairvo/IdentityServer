@@ -12,44 +12,62 @@
 
         @if (Model.EnableLocalLogin)
         {
+            
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-header">
                         <h2>Local Account</h2>
                     </div>
+                    @if (Model.StepNr != 2)
+                    {
+                        <div class="card-body">
+                            <form asp-route="LoginPassword">
+                                <input type="hidden" asp-for="ReturnUrl" />
 
-                    <div class="card-body">
-                        <form asp-route="Login">
-                            <input type="hidden" asp-for="ReturnUrl" />
-
-                            <div class="form-group">
-                                <label asp-for="Username"></label>
-                                <input class="form-control" placeholder="Username" asp-for="Username" autofocus>
-                            </div>
-                            <div class="form-group">
-                                <label asp-for="Password"></label>
-                                <input type="password" class="form-control" placeholder="Password" asp-for="Password" autocomplete="off">
-                            </div>
-                            @if (Model.AllowRememberLogin)
-                            {
                                 <div class="form-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input" asp-for="RememberLogin">
-                                        <label class="form-check-label" asp-for="RememberLogin">
-                                            Remember My Login
-                                        </label>
-                                    </div>
+                                    <label asp-for="Username"></label>
+                                    <input class="form-control" placeholder="Username" asp-for="Username" autofocus>
                                 </div>
-                            }
-                            <button class="btn btn-primary" name="button" value="login">Login</button>
-                            <button class="btn btn-secondary" name="button" value="cancel">Cancel</button>
-                        </form>
+                                <button class="btn btn-primary" name="button" value="login">Login</button>
+                                <button class="btn btn-secondary" name="button" value="cancel">Cancel</button>
+
+                                @if (Model.StepNr == 2)
+                                {
+
+                                    <input type="hidden" asp-for="ReturnUrl" />
+                                    <input type="hidden" asp-for="Username" />
+
+
+                                    <div class="form-group">
+                                        <label asp-for="Password"></label>
+                                        <input type="password" class="form-control" placeholder="Password" asp-for="Password" autocomplete="off">
+                                    </div>
+                                    <button class="btn btn-primary" name="button" value="loginpassword">Login</button>
+                                    <button class="btn btn-secondary" name="button" value="cancel">Cancel</button>
+
+                                    @if (Model.AllowRememberLogin)
+                                    {
+                                        <div class="form-group">
+                                            <div class="form-check">
+                                                <input class="form-check-input" asp-for="RememberLogin">
+                                                <label class="form-check-label" asp-for="RememberLogin">
+                                                    Remember My Login
+                                                </label>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                                <button class="btn btn-primary" name="button" value="login">Login</button>
+                                <button class="btn btn-secondary" name="button" value="cancel">Cancel</button>
+                            </form>
+                        </div>
+                    }
                     </div>
-                </div>
             </div>
+
         }
 
-        @if (Model.VisibleExternalProviders.Any())
+        @*@if (Model.VisibleExternalProviders.Any())
         {
             <div class="col-sm-6">
                 <div class="card">
@@ -74,7 +92,7 @@
                     </div>
                 </div>
             </div>
-        }
+        }*@
 
         @if (!Model.EnableLocalLogin && !Model.VisibleExternalProviders.Any())
         {

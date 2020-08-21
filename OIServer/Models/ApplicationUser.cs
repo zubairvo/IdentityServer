@@ -4,11 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace IdentityServer.Models
+namespace OIServer.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        //public string AuthType { get; set; }
-
     }
 }

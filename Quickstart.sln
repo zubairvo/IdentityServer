@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C9A90E22-817
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "src\IdentityServer\IdentityServer.csproj", "{4E4276D2-ABD8-4B4C-AFE0-8F662F66A3EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityAuth", "IdentityAuth\IdentityAuth.csproj", "{A5E266BC-CA6B-4C19-8FE6-FCC0771EE142}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityAuth", "IdentityAuth\IdentityAuth.csproj", "{A5E266BC-CA6B-4C19-8FE6-FCC0771EE142}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
